@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, LogOut, BookOpen, Book, ScrollText } from 'lucide-react';
+import { Menu, X, LogOut, BookOpen, Book, ScrollText, FileText } from 'lucide-react'; // Import FileText
 
 const AdminSidebar = ({ setIsAdminLoggedIn }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -11,6 +11,8 @@ const AdminSidebar = ({ setIsAdminLoggedIn }) => {
     { path: '/admin/blog', label: 'Blog', icon: BookOpen },
     { path: '/admin/course', label: 'Course', icon: Book },
     { path: '/admin/research', label: 'Research', icon: ScrollText },
+    // ADD THIS LINE BELOW
+    { path: '/admin/articles', label: 'Articles', icon: FileText },
   ];
 
   const handleLogout = () => {

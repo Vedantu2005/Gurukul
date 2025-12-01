@@ -12,7 +12,9 @@ import AdminLogin from './pages/Admin/Login';
 import ProtectedRoute from './pages/Admin/ProtectedRoute';
 import BlogManager from './pages/Admin/Blog';
 import CourseManager from './pages/Admin/CourseManager';
-import ResearchManager from './pages/Admin/ResearchManager'; 
+import ResearchManager from './pages/Admin/ResearchManager';
+// 1. IMPORT THE ARTICLE MANAGER
+import ArticleManager from './pages/Admin/ArticleManager'; 
 import Gurukul from './pages/Gurukul';
 import ResearchPapers from './pages/ResearchPapers';
 import ArticlePublications from './pages/ArticlePublications';
@@ -32,7 +34,6 @@ const AppContent = ({ isAdminLoggedIn, setIsAdminLoggedIn }) => {
     <>
       <ScrollToTop />
       
-      {/* Global Navbar */}
       {showGlobalNav && <Navbar />}
 
       <Routes>
@@ -75,10 +76,19 @@ const AppContent = ({ isAdminLoggedIn, setIsAdminLoggedIn }) => {
             </ProtectedRoute>
           }
         />
+
+        {/* 2. ADD THIS ROUTE FOR ARTICLES */}
+        <Route
+          path="/admin/articles"
+          element={
+            <ProtectedRoute isLoggedIn={isAdminLoggedIn}>
+              <ArticleManager setIsAdminLoggedIn={setIsAdminLoggedIn} />
+            </ProtectedRoute>
+          }
+        />
         
       </Routes>
 
-      {/* Global Footer */}
       {showGlobalNav && <Footer />}
     </>
   )
