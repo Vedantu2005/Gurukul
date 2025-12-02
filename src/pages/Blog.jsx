@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, ArrowRight, Loader } from 'lucide-react';
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase'; // Adjust path if firebase.js is in src/
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -43,7 +41,6 @@ const Blog = () => {
 
   return (
     <>
-    <Navbar />
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
         {/* Hero Section */}
         <section className="container mx-auto px-6 py-10 max-w-7xl md:py-16">
@@ -172,7 +169,7 @@ const Blog = () => {
         {/* Bottom Spacer */}
         <div className="h-20"></div>
       </div>
-      <Footer />
+      {/* Navbar and Footer are rendered by App.jsx so they shouldn't be included here */}
     </>
   );
 };

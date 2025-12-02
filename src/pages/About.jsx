@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { Award, Users, BookOpen, Globe, ChevronRight, Heart, ChevronLeft } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Achievements from '../components/Achievements';
 import Seminars from '../components/Seminars';
 import Awards from '../components/Awards';
@@ -164,7 +162,6 @@ const About = () => {
 
     return (
         <>
-            <Navbar />
             <div className="bg-[#E8D8C4] text-[#561C24] overflow-hidden">
                 {/* Hero Section */}
                 <section className="relative pt-20 pb-12 md:pt-12 md:pb-20 px-4 sm:px-6 lg:px-8">
@@ -277,7 +274,7 @@ const About = () => {
         }
       `}</style>
             </div>
-            <Footer />
+            {/* Navbar and Footer are provided globally by App.jsx to avoid duplication */}
         </>
     );
 };
